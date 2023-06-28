@@ -1,5 +1,6 @@
 package com.ippon.project.spring_rest_api_project.main.business;
 
+import com.ippon.project.spring_rest_api_project.main.business.exceptions.ResourceAlreadyExist;
 import com.ippon.project.spring_rest_api_project.main.business.exceptions.ResourceNotFoundException;
 import com.ippon.project.spring_rest_api_project.main.business.utils.Preconditions;
 import com.ippon.project.spring_rest_api_project.main.domain.Dumb;
@@ -25,6 +26,9 @@ public class DumbService {
     }
 
     public Dumb create(Dumb resource) {
+        mockService.findById(resource.id()).ifPresent((foundResource) -> {
+            throw new ResourceAlreadyExist(foundResource.id());
+        });
         Preconditions.checkNotNull(resource, "From client");
         return mockService.create(resource);
     }
