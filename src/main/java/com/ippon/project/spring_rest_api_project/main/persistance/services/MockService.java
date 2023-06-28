@@ -1,6 +1,6 @@
-package com.ippon.project.spring_rest_api_project.persistance.services;
+package com.ippon.project.spring_rest_api_project.main.persistance.services;
 
-import com.ippon.project.spring_rest_api_project.domain.Dumb;
+import com.ippon.project.spring_rest_api_project.main.domain.Dumb;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

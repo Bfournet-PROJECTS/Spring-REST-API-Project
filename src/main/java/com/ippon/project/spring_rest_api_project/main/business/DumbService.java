@@ -1,12 +1,14 @@
-package com.ippon.project.spring_rest_api_project.business;
+package com.ippon.project.spring_rest_api_project.main.business;
 
-import com.ippon.project.spring_rest_api_project.business.exceptions.ResourceNotFoundException;
-import com.ippon.project.spring_rest_api_project.business.utils.Preconditions;
-import com.ippon.project.spring_rest_api_project.domain.Dumb;
-import com.ippon.project.spring_rest_api_project.persistance.services.MockService;
+import com.ippon.project.spring_rest_api_project.main.business.exceptions.ResourceNotFoundException;
+import com.ippon.project.spring_rest_api_project.main.business.utils.Preconditions;
+import com.ippon.project.spring_rest_api_project.main.domain.Dumb;
+import com.ippon.project.spring_rest_api_project.main.persistance.services.MockService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class DumbService {
     private final MockService mockService;
 

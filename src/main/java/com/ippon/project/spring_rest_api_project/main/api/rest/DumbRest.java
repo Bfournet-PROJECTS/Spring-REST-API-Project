@@ -1,7 +1,7 @@
-package com.ippon.project.spring_rest_api_project.api.rest;
+package com.ippon.project.spring_rest_api_project.main.api.rest;
 
-import com.ippon.project.spring_rest_api_project.business.DumbService;
-import com.ippon.project.spring_rest_api_project.domain.Dumb;
+import com.ippon.project.spring_rest_api_project.main.business.DumbService;
+import com.ippon.project.spring_rest_api_project.main.domain.Dumb;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

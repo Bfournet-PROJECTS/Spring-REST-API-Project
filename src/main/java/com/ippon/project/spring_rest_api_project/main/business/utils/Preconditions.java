@@ -1,6 +1,6 @@
-package com.ippon.project.spring_rest_api_project.business.utils;
+package com.ippon.project.spring_rest_api_project.main.business.utils;
 
-import com.ippon.project.spring_rest_api_project.business.exceptions.NullResourceException;
+import com.ippon.project.spring_rest_api_project.main.business.exceptions.NullResourceException;
 
 public class Preconditions {
 
