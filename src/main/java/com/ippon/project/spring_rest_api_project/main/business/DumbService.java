@@ -7,6 +7,8 @@ import com.ippon.project.spring_rest_api_project.main.domain.Dumb;
 import com.ippon.project.spring_rest_api_project.main.persistance.services.MockService;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -17,8 +19,14 @@ public class DumbService {
         this.mockService = dumbRepository;
     }
 
-    public List<Dumb> findAll() {
-        return this.mockService.findAll();
+    public List<Dumb> findAll(String sort) {
+        List<Dumb> dumbList = new ArrayList<>(this.mockService.findAll());
+        if (sort.equals("ASC")) {
+            dumbList.sort(Comparator.comparingLong(Dumb::id));
+        } else if (sort.equals("DESC")) {
+            dumbList.sort(Comparator.comparingLong(Dumb::id).reversed());
+        }
+        return dumbList;
     }
 
     public Dumb findById(Long id) {

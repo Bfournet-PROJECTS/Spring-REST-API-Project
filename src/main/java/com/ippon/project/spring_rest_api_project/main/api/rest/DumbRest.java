@@ -17,8 +17,8 @@ class DumbRest {
     }
 
     @GetMapping
-    public List<Dumb> findAll() {
-        return dumbService.findAll();
+    public List<Dumb> findAll(@RequestParam(value = "sort", defaultValue = "") String sort) {
+        return dumbService.findAll(sort);
     }
 
     @GetMapping(value = "/{id}")
