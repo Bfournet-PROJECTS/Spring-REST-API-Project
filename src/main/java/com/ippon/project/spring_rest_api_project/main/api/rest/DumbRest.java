@@ -2,6 +2,7 @@ package com.ippon.project.spring_rest_api_project.main.api.rest;
 
 import com.ippon.project.spring_rest_api_project.main.business.DumbService;
 import com.ippon.project.spring_rest_api_project.main.domain.Dumb;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,7 +28,7 @@ class DumbRest {
     }
 
     @PostMapping
-    @ResponseStatus()
+    @ResponseStatus(HttpStatus.CREATED)
     public Dumb create(@RequestBody Dumb resource) {
         return dumbService.create(resource);
     }

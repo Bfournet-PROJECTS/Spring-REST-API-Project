@@ -34,10 +34,10 @@ public class DumbService {
     }
 
     public Dumb create(Dumb resource) {
+        Preconditions.checkNotNull(resource, "From client");
         mockService.findById(resource.id()).ifPresent((foundResource) -> {
             throw new ResourceAlreadyExist(foundResource.id());
         });
-        Preconditions.checkNotNull(resource, "From client");
         return mockService.create(resource);
     }
 
